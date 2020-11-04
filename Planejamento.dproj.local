@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/10/20 12:06:34.000.719,=C:\Users\bobel\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/10/20 12:07:14.000.110,C:\Users\bobel\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\bobel\Desktop\Planejamento\plFormPrincipal.pas</Transaction>
+    <Transaction>2020/10/20 12:07:14.000.110,C:\Users\bobel\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\bobel\Desktop\Planejamento\plFormPrincipal.dfm</Transaction>
+    <Transaction>2020/10/20 12:07:52.000.119,C:\Users\bobel\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\bobel\Desktop\Planejamento\Planejamento.dproj</Transaction>
+    <Transaction>2020/10/20 12:25:08.000.248,=C:\Users\bobel\Desktop\Planejamento\Unit1.pas</Transaction>
+    <Transaction>2020/10/30 11:19:52.000.189,=D:\Projetos Prog\Planejamento\Unit1.pas</Transaction>
+    <Transaction>2020/10/30 11:22:33.000.424,D:\Projetos Prog\Planejamento\Unit1.pas=D:\Projetos Prog\Planejamento\projetos\SplashScreen\plSplashScreen.pas</Transaction>
+    <Transaction>2020/10/30 11:22:33.000.424,D:\Projetos Prog\Planejamento\Unit1.dfm=D:\Projetos Prog\Planejamento\projetos\SplashScreen\plSplashScreen.dfm</Transaction>
+    <Transaction>2020/10/30 11:46:28.000.211,=D:\Projetos Prog\Planejamento\Unit1.pas</Transaction>
+    <Transaction>2020/10/30 11:46:57.000.773,D:\Projetos Prog\Planejamento\Unit1.pas=D:\Projetos Prog\Planejamento\projetos\Login\plLogin.pas</Transaction>
+    <Transaction>2020/10/30 11:46:57.000.773,D:\Projetos Prog\Planejamento\Unit1.dfm=D:\Projetos Prog\Planejamento\projetos\Login\plLogin.dfm</Transaction>
+    <Transaction>2020/10/30 12:01:35.000.148,=D:\Projetos Prog\Planejamento\Unit1.pas</Transaction>
+    <Transaction>2020/10/30 12:02:09.000.709,D:\Projetos Prog\Planejamento\Unit1.dfm=D:\Projetos Prog\Planejamento\DataModules\pldmPlaneja.dfm</Transaction>
+    <Transaction>2020/10/30 12:02:09.000.709,D:\Projetos Prog\Planejamento\Unit1.pas=D:\Projetos Prog\Planejamento\DataModules\pldmPlaneja.pas</Transaction>
+  </Transactions>
+</BorlandProject>

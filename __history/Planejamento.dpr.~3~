@@ -1,0 +1,15 @@
+program Planejamento;
+
+uses
+  Vcl.Forms,
+  plFormPrincipal in 'plFormPrincipal.pas' {fnFormPrincipal},
+  plSplashScreen in 'projetos\SplashScreen\plSplashScreen.pas' {fnSplashScreen};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfnFormPrincipal, fnFormPrincipal);
+  Application.Run;
+end.

@@ -1,0 +1,14 @@
+﻿object dmPlaneja: TdmPlaneja
+  OldCreateOrder = False
+  Height = 274
+  Width = 374
+  object Conexão: TFDConnection
+    Left = 16
+    Top = 16
+  end
+  object tbLogin: TFDTable
+    Connection = Conexão
+    Left = 16
+    Top = 72
+  end
+end

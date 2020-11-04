@@ -1,0 +1,14 @@
+program Planejamento;
+
+uses
+  Vcl.Forms,
+  plFormPrincipal in 'plFormPrincipal.pas' {fnFormPrincipal};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfnFormPrincipal, fnFormPrincipal);
+  Application.Run;
+end.
