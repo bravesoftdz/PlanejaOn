@@ -245,4 +245,8 @@ object fnLogin: TfnLogin
       FFF8E00F00000000FFFFF83F0000000000000000000000000000000000000000
       000000000000}
   end
+  object SQLConnection1: TSQLConnection
+    Left = 232
+    Top = 45
+  end
 end

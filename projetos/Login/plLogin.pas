@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.DBCtrls, Vcl.StdCtrls, Vcl.ComCtrls,
-  Vcl.ToolWin, Vcl.ExtCtrls, System.ImageList, Vcl.ImgList;
+  Vcl.ToolWin, Vcl.ExtCtrls, System.ImageList, Vcl.ImgList, Data.FMTBcd,
+  Data.DB, Data.SqlExpr, FireDAC.Comp.Client;
 
 type
   TfnLogin = class(TForm)
@@ -19,12 +20,14 @@ type
     tbExit: TToolButton;
     pnTelaLogin: TPanel;
     imgList: TImageList;
+    SQLConnection1: TSQLConnection;
     procedure edSenhaKeyPress(Sender: TObject; var Key: Char);
     procedure FormActivate(Sender: TObject);
     procedure tbExitClick(Sender: TObject);
     procedure tbEntryClick(Sender: TObject);
   private
     { Private declarations }
+    procedure ChamaInformacoesLogin;
   public
     { Public declarations }
   end;
@@ -39,12 +42,36 @@ implementation
 
 uses pldmPlaneja;
 
+procedure TfnLogin.ChamaInformacoesLogin;
+var
+  Query: TFDQuery;
+begin
+  try
+    Query := TFDQuery.Create(nil);
+    Query.Connection := dmPlaneja.Conexão;
+
+    Query.SQL.Add('select LOGIN, SENHA from TLOGIN where LOGIN = '+ QuotedStr(edLogin.Text));
+    Query.Open;
+
+    if not Query.Eof then
+      begin
+        bdLogin := Query.FieldByName('LOGIN').AsString;
+        bdSenha := Query.FieldByName('SENHA').AsString;
+      end;
+
+
+    Query.Close;
+  finally
+    FreeAndNil(Query);
+  end;
+
+end;
+
 procedure TfnLogin.edSenhaKeyPress(Sender: TObject; var Key: Char);
 begin
   if Key = #13 then
     begin
-      bdSenha := dmPlaneja.tbLogin.FieldValues['SENHA'];
-      bdLogin := dmPlaneja.tbLogin.FieldValues['LOGIN'];
+      ChamaInformacoesLogin;
       if (bdSenha = edSenha.Text) and (bdLogin = edLogin.Text) then
         begin
           fnLogin.Close;
@@ -53,7 +80,7 @@ begin
         begin
           ShowMessage('Senha ou login incorretos!');
           edSenha.Clear;
-          edSenha.SetFocus;
+          edLogin.SetFocus;
         end;
     end;
 end;
@@ -67,8 +94,7 @@ end;
 
 procedure TfnLogin.tbEntryClick(Sender: TObject);
 begin
-  bdSenha := dmPlaneja.tbLogin.FieldValues['SENHA'];
-  bdLogin := dmPlaneja.tbLogin.FieldValues['LOGIN'];
+  ChamaInformacoesLogin;
   if (bdSenha = edSenha.Text) and (bdLogin = edLogin.Text) then
     begin
       fnLogin.Close;
@@ -77,7 +103,7 @@ begin
     begin
       ShowMessage('Senha ou login incorretos!');
       edSenha.Clear;
-      edSenha.SetFocus;
+      edLogin.SetFocus;
     end;
 end;
 
